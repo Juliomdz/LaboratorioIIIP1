@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>HeroDB</title>
+
+    <script src="./scripts/app.js" type="module" defer></script>
+    <link href="./css/estilos.css" rel="stylesheet" defer />
+    <link
+      href="./assets/iconoHeroes.png"
+      rel="shotcut icon"
+      type="image/x-icon"
+    />
+  </head>
+  <body>
+    <div class="divBienvenida">
+      <ul id="lista-bienvenida">
+        <li class="item-lista-bienvenida">
+          <a href="#" target="_self" rel="noopener noreferrer nofollow">Home</a>
+        </li>
+        <li class="item-lista-bienvenida">
+          <a
+            href="#Publicaciones"
+            target="_self"
+            rel="noopener noreferrer nofollow"
+            >Personajes</a
+          >
+        </li>
+        <li class="item-lista-bienvenida">Redes Sociales</li>
+        <li class="item-lista-bienvenida">FAQ</li>
+      </ul>
+
+      <a
+        id="logo-principal"
+        href="index.html"
+        target="_self"
+        rel="noopener noreferrer nofollow"
+      >
+        <img
+          class="logoPrincipalImg"
+          src="./assets/marvelDC.jpeg"
+          alt="Foto del logo principal"
+      /></a>
+      <label class="tituloPrincipal"></label>
+    </div>
+
+    <section class="form-container">
+      <fieldset class="fieldset-form">
+        <legend class="tituloFieldset-form">CRUD Heroes</legend>
+
+        <fieldset class="fieldset2-form">
+          <form>
+            <label class="labelForm">Nombre</label>
+            <div>
+              <input
+                id="txtBoxNombre"
+                class="infoBoxNameAlias"
+                type="text"
+                name="Nombre"
+                placeholder="Ingrese título"
+                autocomplete="off"
+              />
+            </div>
+
+            <label class="labelForm">Alias</label>
+            <div>
+              <img
+                class="imagenForm"
+                src="./assets/alias.png"
+                alt="Icono Alias"
+              />
+              <input
+                id="txtBoxAlias"
+                class="infoBoxNameAlias"
+                name="Alias"
+                type="text"
+                placeholder="Ingrese título"
+                autocomplete="off"
+              />
+            </div>
+
+            <label class="labelForm">Editorial</label>
+            <div id="pRadioButtonForm">
+              <label class="labelForm" id="labelMarvelRadioButton"
+                >Marvel</label
+              >
+              <input
+                id="radioBtnMarvel"
+                class="radioEditorialSelector"
+                type="radio"
+                name="Editorial"
+                value="Marvel"
+                checked
+              />
+
+              <label class="labelForm" id="labelDCRadioButton">DC</label>
+              <input
+                id="radioBtnDC"
+                class="radioEditorialSelector"
+                type="radio"
+                name="Editorial"
+                value="DC"
+              />
+            </div>
+
+            <label class="labelForm">Fuerza</label>
+            <div>
+              <img
+                class="imagenForm"
+                src="./assets/fuerza.png"
+                alt="Icono Fuerza"
+              />
+              <input
+                id="txtBoxFuerza"
+                class="infoBox"
+                type="number"
+                name="Fuerza"
+                placeholder="Ingrese fuerza"
+                autocomplete="off"
+              />
+            </div>
+
+            <label class="labelForm">Arma</label>
+            <div>
+              <img
+                class="imagenForm"
+                src="./assets/arma.png"
+                alt="Icono Arma"
+              />
+              <input
+                id="txtBoxArma"
+                class="infoBox"
+                name="Arma"
+                placeholder="Ingrese el Arma"
+              />
+            </div>
+
+            <img
+              class="imagenForm"
+              src="./assets/guardar.png"
+              alt="Foto de reloj"
+            />
+            <input
+              class="BtnGuardar"
+              type="submit"
+              name="AccionGuardarPublicacion"
+              value="Guardar"
+            />
+          </form>
+        </fieldset>
+      </fieldset>
+    </section>
+
+    <div class="spinner" id="divSpinner">
+      <label class="labelForm">Cargando heroes... Aguarde por favor...</label>
+      <img id="loader" src="./assets/Herospinner.gif" alt="Loader de pagina" />
+    </div>
+
+    <section>
+      <fieldset class="fieldset-tabla" id="Publicaciones">
+        <legend class="tituloFieldset-tabla">Heroes registrados</legend>
+
+        <fieldset class="fieldset-botones-tabla">
+          <div class="div-botones-tabla">
+            <input
+              id="BtnEliminar"
+              class="BtnEliminar"
+              type="button"
+              name="AccionEliminarPublicacion"
+              value="Eliminar"
+            />
+            <input
+              id="BtnCancelar"
+              class="BtnCancelar"
+              type="button"
+              name="AccionCancelarPublicacion"
+              value="Cancelar"
+            />
+            <input
+              id="BtnModificar"
+              class="BtnModificar"
+              type="button"
+              name="AccionModificarPublicacion"
+              value="Modificar"
+            />
+          </div>
+        </fieldset>
+
+        <div id="table-container" class="table-container" hidden></div>
+      </fieldset>
+    </section>
+
+    <div class="divDespedida">
+      <ul id="lista-despedida">
+        <li class="item-lista-bienvenida">
+          <a href="#" target="_self" rel="noopener noreferrer nofollow">Home</a>
+        </li>
+        <li class="item-lista-bienvenida">
+          <a
+            href="#lista-bienvenida"
+            target="_self"
+            rel="noopener noreferrer nofollow"
+            >Agregar
+          </a>
+        </li>
+        <li class="item-lista-bienvenida">Redes Sociales</li>
+        <li class="item-lista-bienvenida">FAQ</li>
+      </ul>
+
+      <div id="parrafo-despedida">
+        Todos los derechos reservados a sus respectivos creadores. ©
+      </div>
+    </div>
+  </body>
+</html>
